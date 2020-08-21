@@ -12,7 +12,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
+app.use(express.static("public", { "extensions": "html" }));
 
 //create mongodb connection with mongoose
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
